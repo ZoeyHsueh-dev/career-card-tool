@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "name": "軟體工程師",
+    "code": "IRC",
+    "description": "設計、開發和維護軟體系統，解決技術問題"
+  },
+  {
+    "id": 2,
+    "name": "幼教老師",
+    "code": "SA",
+    "description": "教育和照顧幼兒，促進其身心發展"
+  },
+  {
+    "id": 3,
+    "name": "地理與航照測繪員",
+    "code": "RIC",
+    "description": "使用測量儀器和航空攝影技術進行地理測繪"
+  },
+  {
+    "id": 4,
+    "name": "心理諮商師",
+    "code": "SI",
+    "description": "提供心理諮商服務，協助個案解決心理困擾"
+  },
+  {
+    "id": 5,
+    "name": "機械工程師",
+    "code": "RIE",
+    "description": "設計和開發機械設備，解決工程技術問題"
+  },
+  {
+    "id": 6,
+    "name": "平面設計師",
+    "code": "AE",
+    "description": "創作視覺設計作品，傳達品牌理念和訊息"
+  },
+  {
+    "id": 7,
+    "name": "會計師",
+    "code": "CE",
+    "description": "處理財務記錄，提供會計和稅務諮詢服務"
+  },
+  {
+    "id": 8,
+    "name": "護理師",
+    "code": "SR",
+    "description": "提供醫療照護服務，協助病患康復"
+  },
+  {
+    "id": 9,
+    "name": "銷售經理",
+    "code": "EC",
+    "description": "制定銷售策略，管理銷售團隊達成業績目標"
+  },
+  {
+    "id": 10,
+    "name": "研究員",
+    "code": "IR",
+    "description": "進行科學研究，探索新知識和技術"
+  },
+  {
+    "id": 11,
+    "name": "廚師",
+    "code": "RA",
+    "description": "準備和烹調食物，創作美味料理"
+  },
+  {
+    "id": 12,
+    "name": "社工師",
+    "code": "SE",
+    "description": "提供社會服務，協助弱勢族群解決問題"
+  },
+  {
+    "id": 13,
+    "name": "建築師",
+    "code": "AIR",
+    "description": "設計建築物，創造功能性和美觀的空間"
+  },
+  {
+    "id": 14,
+    "name": "律師",
+    "code": "EI",
+    "description": "提供法律諮詢，代理訴訟案件"
+  },
+  {
+    "id": 15,
+    "name": "醫師",
+    "code": "IS",
+    "description": "診斷和治療疾病，維護病患健康"
+  },
+  {
+    "id": 16,
+    "name": "記者",
+    "code": "AE",
+    "description": "採訪新聞事件，撰寫報導文章"
+  },
+  {
+    "id": 17,
+    "name": "電機工程師",
+    "code": "RIE",
+    "description": "設計和維護電氣系統和設備"
+  },
+  {
+    "id": 18,
+    "name": "人力資源專員",
+    "code": "SEC",
+    "description": "管理人力資源，處理員工招募和培訓"
+  },
+  {
+    "id": 19,
+    "name": "攝影師",
+    "code": "AR",
+    "description": "拍攝照片，記錄美好時刻和重要事件"
+  },
+  {
+    "id": 20,
+    "name": "財務分析師",
+    "code": "IC",
+    "description": "分析財務數據，提供投資建議"
+  },
+  {
+    "id": 21,
+    "name": "物理治療師",
+    "code": "SR",
+    "description": "協助患者恢復身體功能和活動能力"
+  },
+  {
+    "id": 22,
+    "name": "網頁設計師",
+    "code": "AIC",
+    "description": "設計和開發網站，創造良好的使用者體驗"
+  },
+  {
+    "id": 23,
+    "name": "市場行銷專員",
+    "code": "AE",
+    "description": "制定行銷策略，推廣產品和品牌"
+  },
+  {
+    "id": 24,
+    "name": "獸醫師",
+    "code": "IR",
+    "description": "診斷和治療動物疾病，維護動物健康"
+  },
+  {
+    "id": 25,
+    "name": "翻譯員",
+    "code": "AI",
+    "description": "進行語言翻譯，促進跨文化溝通"
+  },
+  {
+    "id": 26,
+    "name": "數據分析師",
+    "code": "IC",
+    "description": "分析大數據，提供商業洞察和決策支援"
+  },
+  {
+    "id": 27,
+    "name": "室內設計師",
+    "code": "AE",
+    "description": "設計室內空間，創造舒適美觀的環境"
+  },
+  {
+    "id": 28,
+    "name": "藥劑師",
+    "code": "IC",
+    "description": "調劑藥物，提供用藥諮詢服務"
+  },
+  {
+    "id": 29,
+    "name": "飛行員",
+    "code": "RIC",
+    "description": "駕駛飛機，確保飛行安全"
+  },
+  {
+    "id": 30,
+    "name": "音樂老師",
+    "code": "AS",
+    "description": "教授音樂技能，培養學生音樂素養"
+  },
+  {
+    "id": 31,
+    "name": "牙醫師",
+    "code": "RIS",
+    "description": "診斷和治療口腔疾病，維護牙齒健康"
+  },
+  {
+    "id": 32,
+    "name": "消防員",
+    "code": "RS",
+    "description": "進行火災救援和災害搶救工作"
+  },
+  {
+    "id": 33,
+    "name": "警察",
+    "code": "SEC",
+    "description": "維護社會治安，執行法律"
+  },
+  {
+    "id": 34,
+    "name": "空服員",
+    "code": "SEC",
+    "description": "在飛機上提供乘客服務，確保飛行安全"
+  },
+  {
+    "id": 35,
+    "name": "導遊",
+    "code": "AES",
+    "description": "帶領遊客參觀景點，介紹當地文化"
+  },
+  {
+    "id": 36,
+    "name": "美髮師",
+    "code": "ARS",
+    "description": "設計髮型，提供美髮造型服務"
+  },
+  {
+    "id": 37,
+    "name": "汽車技師",
+    "code": "RIC",
+    "description": "維修和保養汽車，診斷機械問題"
+  },
+  {
+    "id": 38,
+    "name": "營養師",
+    "code": "IS",
+    "description": "提供營養諮詢，設計健康飲食計畫"
+  },
+  {
+    "id": 39,
+    "name": "圖書館員",
+    "code": "CSI",
+    "description": "管理圖書資源，協助讀者查找資料"
+  },
+  {
+    "id": 40,
+    "name": "保險業務員",
+    "code": "ESC",
+    "description": "銷售保險商品，提供風險規劃建議"
+  },
+  {
+    "id": 41,
+    "name": "餐廳經理",
+    "code": "ECS",
+    "description": "管理餐廳營運，確保服務品質"
+  },
+  {
+    "id": 42,
+    "name": "園藝師",
+    "code": "RA",
+    "description": "設計和維護花園景觀，照料植物"
+  },
+  {
+    "id": 43,
+    "name": "廣告創意",
+    "code": "AE",
+    "description": "創作廣告概念和文案，設計宣傳內容"
+  },
+  {
+    "id": 44,
+    "name": "職能治療師",
+    "code": "SRI",
+    "description": "協助患者重建生活技能和工作能力"
+  },
+  {
+    "id": 45,
+    "name": "銀行專員",
+    "code": "CES",
+    "description": "處理銀行業務，提供金融服務"
+  },
+  {
+    "id": 46,
+    "name": "公關專員",
+    "code": "AES",
+    "description": "維護企業形象，處理媒體關係"
+  },
+  {
+    "id": 47,
+    "name": "化學工程師",
+    "code": "IRE",
+    "description": "設計化學製程，開發新材料"
+  },
+  {
+    "id": 48,
+    "name": "電競選手",
+    "code": "RC",
+    "description": "參與電子競技比賽，追求遊戲技能巧"
+  },
+  {
+    "id": 49,
+    "name": "瑜伽教練",
+    "code": "AS",
+    "description": "教授瑜伽動作，指導身心靈練習"
+  },
+  {
+    "id": 50,
+    "name": "法醫",
+    "code": "IRC",
+    "description": "進行屍體解剖，協助司法調查"
+  },
+  {
+    "id": 51,
+    "name": "動畫師",
+    "code": "ARC",
+    "description": "製作動畫影片，創造視覺故事"
+  },
+  {
+    "id": 52,
+    "name": "環境工程師",
+    "code": "IRE",
+    "description": "設計環保系統，解決污染問題"
+  },
+  {
+    "id": 53,
+    "name": "房仲業務",
+    "code": "ESC",
+    "description": "協助買賣房屋，提供不動產諮詢"
+  },
+  {
+    "id": 54,
+    "name": "語言治療師",
+    "code": "SRI",
+    "description": "協助改善語言和溝通障礙"
+  },
+  {
+    "id": 55,
+    "name": "遊戲設計師",
+    "code": "AIC",
+    "description": "設計遊戲規則和玩法，創造娛樂體驗"
+  },
+  {
+    "id": 56,
+    "name": "採購專員",
+    "code": "CER",
+    "description": "負責物料採購，控制成本和品質"
+  },
+  {
+    "id": 57,
+    "name": "健身教練",
+    "code": "SRE",
+    "description": "指導運動訓練，協助達成健身目標"
+  },
+  {
+    "id": 58,
+    "name": "編劇",
+    "code": "AI",
+    "description": "撰寫劇本，創作故事內容"
+  },
+  {
+    "id": 59,
+    "name": "品管工程師",
+    "code": "RIC",
+    "description": "檢驗產品品質，改善製程流程"
+  },
+  {
+    "id": 60,
+    "name": "社群經營",
+    "code": "AES",
+    "description": "經營社群媒體，與粉絲互動交流"
+  },
+  {
+    "id": 61,
+    "name": "生物學家",
+    "code": "IRA",
+    "description": "研究生物現象，探索生命奧秘"
+  },
+  {
+    "id": 62,
+    "name": "客服專員",
+    "code": "CSE",
+    "description": "處理客戶問題，提供售後服務"
+  },
+  {
+    "id": 63,
+    "name": "舞蹈老師",
+    "code": "ARS",
+    "description": "教授舞蹈技巧，培養表演能力"
+  },
+  {
+    "id": 64,
+    "name": "土木工程師",
+    "code": "RIE",
+    "description": "設計基礎設施，監督建設工程"
+  },
+  {
+    "id": 65,
+    "name": "產品經理",
+    "code": "EAI",
+    "description": "規劃產品策略，協調開發團隊"
+  },
+  {
+    "id": 66,
+    "name": "寵物美容師",
+    "code": "ARS",
+    "description": "為寵物提供美容護理服務"
+  },
+  {
+    "id": 67,
+    "name": "統計師",
+    "code": "ICR",
+    "description": "收集分析數據，提供統計報告"
+  },
+  {
+    "id": 68,
+    "name": "廣播主持人",
+    "code": "AES",
+    "description": "主持廣播節目，與聽眾互動"
+  },
+  {
+    "id": 69,
+    "name": "食品技師",
+    "code": "IRC",
+    "description": "研發食品配方，確保食品安全"
+  },
+  {
+    "id": 70,
+    "name": "專案經理",
+    "code": "ECI",
+    "description": "管理專案進度，協調各部門合作"
+  },
+  {
+    "id": 71,
+    "name": "珠寶設計師",
+    "code": "ARE",
+    "description": "設計珠寶飾品，創造精美作品"
+  },
+  {
+    "id": 72,
+    "name": "氣象預報員",
+    "code": "IRC",
+    "description": "分析氣象資料，預測天氣變化"
+  },
+  {
+    "id": 73,
+    "name": "心理學家",
+    "code": "IAS",
+    "description": "研究心理現象，提供心理治療"
+  },
+  {
+    "id": 74,
+    "name": "美術老師",
+    "code": "AIS",
+    "description": "教授美術技巧，培養藝術創作能力"
+  },
+  {
+    "id": 75,
+    "name": "程式設計師",
+    "code": "IRC",
+    "description": "撰寫程式碼，開發軟體應用"
+  },
+  {
+    "id": 76,
+    "name": "花藝師",
+    "code": "ARE",
+    "description": "設計花藝作品，佈置空間美化"
+  },
+  {
+    "id": 77,
+    "name": "海關人員",
+    "code": "CER",
+    "description": "檢查進出口貨物，執行海關法規"
+  },
+  {
+    "id": 78,
+    "name": "考古學家",
+    "code": "IRC",
+    "description": "挖掘古蹟文物，研究歷史文化"
+  },
+  {
+    "id": 79,
+    "name": "職業駕駛",
+    "code": "RCS",
+    "description": "駕駛各類車輛，提供運輸服務"
+  },
+  {
+    "id": 80,
+    "name": "外交官",
+    "code": "EAS",
+    "description": "處理國際事務，代表國家利益"
+  },
+  {
+    "id": 81,
+    "name": "電視製作人",
+    "code": "AEC",
+    "description": "製作電視節目，統籌拍攝流程"
+  },
+  {
+    "id": 82,
+    "name": "水電工",
+    "code": "RC",
+    "description": "安裝維修水電設備，解決管線問題"
+  },
+  {
+    "id": 83,
+    "name": "獵頭顧問",
+    "code": "ESI",
+    "description": "協助企業招募人才，媒合就業機會"
+  },
+  {
+    "id": 84,
+    "name": "調酒師",
+    "code": "ARS",
+    "description": "調製各式酒類，提供酒吧服務"
+  },
+  {
+    "id": 85,
+    "name": "天文學家",
+    "code": "IRA",
+    "description": "觀測研究天體，探索宇宙奧秘"
+  },
+  {
+    "id": 86,
+    "name": "時尚設計師",
+    "code": "AEI",
+    "description": "設計服裝款式，創造流行趨勢"
+  },
+  {
+    "id": 87,
+    "name": "船員",
+    "code": "REC",
+    "description": "操作船舶航行，執行海上作業"
+  },
+  {
+    "id": 88,
+    "name": "酒店經理",
+    "code": "ECS",
+    "description": "管理酒店營運，確保賓客滿意"
+  },
+  {
+    "id": 89,
+    "name": "麵包師",
+    "code": "RAC",
+    "description": "製作麵包糕點，提供烘焙商品"
+  },
+  {
+    "id": 90,
+    "name": "臨床心理師",
+    "code": "SIA",
+    "description": "提供心理評估和治療服務"
+  },
+  {
+    "id": 91,
+    "name": "木工",
+    "code": "RAI",
+    "description": "製作木製家具，進行木材加工"
+  },
+  {
+    "id": 92,
+    "name": "投資顧問",
+    "code": "ECI",
+    "description": "提供投資建議，協助財富管理"
+  },
+  {
+    "id": 93,
+    "name": "化妝師",
+    "code": "ARS",
+    "description": "提供化妝造型服務，美化外貌"
+  },
+  {
+    "id": 94,
+    "name": "農夫",
+    "code": "RCI",
+    "description": "種植農作物，從事農業生產"
+  },
+  {
+    "id": 95,
+    "name": "策展人",
+    "code": "AEI",
+    "description": "規劃展覽內容，策劃藝文活動"
+  },
+  {
+    "id": 96,
+    "name": "網路工程師",
+    "code": "IRC",
+    "description": "建置網路系統，維護網路安全"
+  },
+  {
+    "id": 97,
+    "name": "婚禮企劃",
+    "code": "AES",
+    "description": "策劃婚禮流程，打造完美婚禮"
+  },
+  {
+    "id": 98,
+    "name": "驗光師",
+    "code": "RIS",
+    "description": "檢查視力問題，配製矯正眼鏡"
+  },
+  {
+    "id": 99,
+    "name": "太空工程師",
+    "code": "IRE",
+    "description": "設計太空設備，參與航太任務"
+  },
+  {
+    "id": 100,
+    "name": "寵物訓練師",
+    "code": "SRA",
+    "description": "訓練寵物行為，教導飼主照顧技巧"
+  }
+]

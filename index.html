@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>職涯諮詢卡牌工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>職涯諮詢卡牌工具</h1>
+            <p>透過卡牌選擇，探索您的職業興趣與Holland職業性格</p>
+        </div>
+
+        <!-- 載入中畫面 -->
+        <div id="loadingScreen" class="start-screen">
+            <h2>載入中...</h2>
+            <p>正在準備職業資料</p>
+        </div>
+
+        <!-- 開始畫面 -->
+        <div id="startScreen" class="start-screen hidden">
+            <h2>歡迎使用職涯探索工具</h2>
+            <p>這個工具將幫助您探索職業興趣。您將從100個職業中選擇10個最感興趣的，然後進行排序，最後分析您的Holland職業性格代碼。</p>
+            <button class="btn-primary" onclick="startTest()">開始測驗</button>
+        </div>
+
+        <!-- 選擇卡牌畫面 -->
+        <div id="selectionScreen" class="hidden">
+            <div class="selection-info">
+                <div class="selection-count">已選擇：<span id="selectedCount">0</span> / 10</div>
+                <button id="submitBtn" class="btn-primary" onclick="goToRanking()" disabled>確認送出</button>
+            </div>
+            <div id="cardsGrid" class="cards-grid"></div>
+            <div id="loadMore" class="load-more hidden">
+                <button class="btn-primary" onclick="loadMoreCards()">載入更多</button>
+            </div>
+        </div>
+
+        <!-- 排序畫面 -->
+        <div id="rankingScreen" class="ranking-screen hidden">
+            <h2>請拖拽排序您選擇的職業（從最喜歡到最不喜歡）</h2>
+            <ul id="sortableList" class="sortable-list"></ul>
+            <button class="btn-primary" onclick="confirmRanking()">排序已確認</button>
+        </div>
+
+        <!-- 結果畫面 -->
+        <div id="resultScreen" class="result-screen hidden">
+            <h2>您的職涯分析結果</h2>
+            
+            <div class="career-ranking">
+                <h3>喜愛職業排名</h3>
+                <div id="careerRankingList"></div>
+            </div>
+
+            <div class="holland-analysis">
+                <h3>Holland職業性格代碼分析</h3>
+                <div id="hollandScores" class="holland-scores"></div>
+            </div>
+
+            <button class="btn-primary restart-btn" onclick="restart()">重新開始測驗</button>
+        </div>
+    </div>
+
+    <!-- 警告彈窗 -->
+    <div id="warningModal" class="modal">
+        <div class="modal-content">
+            <h3>選擇已達上限</h3>
+            <p>您已經選擇了10張卡牌，請先取消其他卡牌再進行選擇。</p>
+            <button onclick="closeModal()">確定</button>
+        </div>
+    </div>
+
+    <!-- 錯誤彈窗 -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <h3>載入錯誤</h3>
+            <p id="errorMessage">無法載入職業資料，請檢查網路連線或重新整理頁面。</p>
+            <button onclick="closeErrorModal()">確定</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
