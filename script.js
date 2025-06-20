@@ -42,7 +42,7 @@ function closeErrorModal() {
     location.reload();
 }
 
-// 開始測驗
+// 開始選擇
 function startTest() {
     document.getElementById('startScreen').classList.add('hidden');
     document.getElementById('selectionScreen').classList.remove('hidden');
@@ -280,7 +280,7 @@ function displayHollandScores(scores) {
     });
 }
 
-// 重新開始測驗
+// 重新開始
 function restart() {
     selectedCards = [];
     currentDisplayCount = 0;
