@@ -210,64 +210,70 @@ function showResults() {
     calculateHollandScores();
 }
 
-// 顯示職業排名（方案五：排行榜式）
+// 顯示職業排名（時間軸式）
 function displayCareerRanking() {
     const rankingList = document.getElementById('careerRankingList');
     rankingList.innerHTML = '';
     
-    // TOP 3 區域
-    const topSection = document.createElement('div');
-    topSection.innerHTML = `
-        <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 25px; font-size: 1.4rem; font-weight: bold; color: #333;">
-            🏆 <span>TOP 3 最喜愛職業</span> ✨
+    // 創建時間軸區域
+    const timelineSection = document.createElement('div');
+    timelineSection.className = 'timeline-section';
+    
+    timelineSection.innerHTML = `
+        <div class="timeline-title">
+            🎯 <span>職業喜好時間軸</span> <span class="sparkle">✨</span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto 35px auto;">
+        
+        <div class="mobile-note">
+            💡 手機版以垂直時間軸呈現，請向下滑動查看完整排序
+        </div>
+        
+        <div class="timeline-container">
+            <!-- 時間軸主線 -->
+            <div class="timeline-line"></div>
+            
+            <!-- 時間軸節點 -->
+            <div class="timeline-nodes">
     `;
     
-    // TOP 3 職業
-    const medals = ['🥇', '🥈', '🥉'];
-    const borderColors = ['#FFD700', '#C0C0C0', '#CD7F32'];
-    
-    for (let i = 0; i < 3; i++) {
-        const career = rankedCareers[i];
-        topSection.innerHTML += `
-            <div style="background: linear-gradient(135deg, #fff, #f8f9fa); border-radius: 15px; padding: 25px 20px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.1); border: 3px solid ${borderColors[i]}; position: relative; overflow: hidden;">
-                <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #947fb3, #f2c873);"></div>
-                <span style="font-size: 2.5rem; margin-bottom: 10px; display: block;">${medals[i]}</span>
-                <div style="font-size: 1.2rem; font-weight: bold; color: #666; margin-bottom: 8px;">第 ${career.rank} 名</div>
-                <div style="font-size: 1.3rem; font-weight: bold; color: #333; margin-bottom: 8px; line-height: 1.3;">${career.name}</div>
-                <div style="background: linear-gradient(45deg, #947fb3, #f2c873); color: white; padding: 6px 15px; border-radius: 20px; font-size: 1rem; font-weight: bold; display: inline-block; text-shadow: 0 1px 2px rgba(0,0,0,0.2);">${career.code}</div>
+    // 生成時間軸節點
+    rankedCareers.forEach((career, index) => {
+        let circleClass = '';
+        if (career.rank === 1) circleClass = 'first';
+        else if (career.rank === 2) circleClass = 'second';
+        else if (career.rank === 3) circleClass = 'third';
+        
+        const cardClass = career.rank <= 3 ? 'top-three' : '';
+        
+        timelineSection.innerHTML += `
+            <div class="timeline-node">
+                <div class="connection-line"></div>
+                <div class="rank-circle ${circleClass}">${career.rank}</div>
+                <div class="career-info ${cardClass}">
+                    <div class="career-name">${career.name}</div>
+                    <div class="career-code">${career.code}</div>
+                </div>
             </div>
         `;
-    }
+    });
     
-    topSection.innerHTML += '</div>';
-    
-    // 其他排名區域
-    const otherSection = document.createElement('div');
-    otherSection.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 25px; font-size: 1.3rem; font-weight: bold; color: #333;">
-            📋 <span>其他職業排名</span>
+    timelineSection.innerHTML += `
+            </div>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+        
+        <div class="progress-indicator">
+            <div>職業喜好程度</div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 5px;">
+                <span>最喜歡</span>
+                <span>最不喜歡</span>
+            </div>
+        </div>
     `;
     
-    // 4-10名職業
-    for (let i = 3; i < rankedCareers.length; i++) {
-        const career = rankedCareers[i];
-        otherSection.innerHTML += `
-            <div style="background: #f8f9fa; border-radius: 10px; padding: 18px 15px; text-align: center; border-left: 4px solid #947fb3; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-                <div style="font-size: 1.1rem; font-weight: bold; color: #947fb3; margin-bottom: 6px;">${career.rank}</div>
-                <div style="font-size: 1rem; font-weight: 600; color: #333; margin-bottom: 6px; line-height: 1.2;">${career.name}</div>
-                <div style="background: rgba(148, 127, 179, 0.15); color: #947fb3; padding: 3px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; display: inline-block;">${career.code}</div>
-            </div>
-        `;
-    }
-    
-    otherSection.innerHTML += '</div>';
-    
-    rankingList.appendChild(topSection);
-    rankingList.appendChild(otherSection);
+    rankingList.appendChild(timelineSection);
 }
 
 // 計算Holland代碼分數
