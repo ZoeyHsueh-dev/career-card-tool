@@ -139,7 +139,7 @@ function goToRanking() {
         li.className = 'sortable-item';
         li.draggable = true;
         li.dataset.id = career.id;
-        li.innerHTML = `${career.name} (${career.code})`;
+        li.innerHTML = `<div class="sortable-item-content">${career.name} (${career.code})</div>`;
         sortableList.appendChild(li);
     });
     
