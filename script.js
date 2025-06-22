@@ -139,7 +139,7 @@ function goToRanking() {
         li.className = 'sortable-item';
         li.draggable = true;
         li.dataset.id = career.id;
-        li.innerHTML = `${career.name} (${career.code})`;
+        li.innerHTML = `<div class="sortable-item-content">${career.name} (${career.code})</div>`;
         sortableList.appendChild(li);
     });
     
@@ -210,23 +210,72 @@ function showResults() {
     calculateHollandScores();
 }
 
-// 顯示職業排名
+// 顯示職業排名（方案五：排行榜式）
 function displayCareerRanking() {
-    const rankingList = document.getElementById('careerRankingList');
-    rankingList.innerHTML = '';
+    const rankingContainer = document.getElementById('careerRankingList');
+    rankingContainer.innerHTML = '';
     
-    rankedCareers.forEach(career => {
-        const item = document.createElement('div');
-        item.className = 'career-item';
-        item.innerHTML = `
-            <div class="career-rank">${career.rank}</div>
-            <div class="career-info">
-                <div class="career-name">${career.name}</div>
-                <div class="career-code">${career.code}</div>
-            </div>
+    // 創建 TOP 3 區域
+    const topThreeSection = document.createElement('div');
+    topThreeSection.className = 'top-three-section';
+    
+    const topThreeTitle = document.createElement('div');
+    topThreeTitle.className = 'top-three-title';
+    topThreeTitle.innerHTML = '🏆 <span>TOP 3 最喜愛職業</span> <span class="sparkle">✨</span>';
+    
+    const topThreeContainer = document.createElement('div');
+    topThreeContainer.className = 'top-three-container';
+    
+    // TOP 3 職業
+    const topThree = rankedCareers.slice(0, 3);
+    const medals = ['🥇', '🥈', '🥉'];
+    const classes = ['first', 'second', 'third'];
+    
+    topThree.forEach((career, index) => {
+        const card = document.createElement('div');
+        card.className = `top-career-card ${classes[index]}`;
+        card.innerHTML = `
+            <span class="medal-rank">${medals[index]}</span>
+            <div class="rank-number">第 ${career.rank} 名</div>
+            <div class="career-name-top">${career.name}</div>
+            <div class="career-code-top">${career.code}</div>
         `;
-        rankingList.appendChild(item);
+        topThreeContainer.appendChild(card);
     });
+    
+    topThreeSection.appendChild(topThreeTitle);
+    topThreeSection.appendChild(topThreeContainer);
+    
+    // 創建其他排名區域
+    const otherSection = document.createElement('div');
+    otherSection.className = 'other-rankings-section';
+    
+    const otherTitle = document.createElement('div');
+    otherTitle.className = 'other-rankings-title';
+    otherTitle.innerHTML = '📋 <span>其他職業排名</span>';
+    
+    const otherGrid = document.createElement('div');
+    otherGrid.className = 'other-rankings-grid';
+    
+    // 4-10 名職業
+    const otherRankings = rankedCareers.slice(3);
+    
+    otherRankings.forEach(career => {
+        const card = document.createElement('div');
+        card.className = 'other-career-card';
+        card.innerHTML = `
+            <div class="other-rank-number">${career.rank}</div>
+            <div class="other-career-name">${career.name}</div>
+            <div class="other-career-code">${career.code}</div>
+        `;
+        otherGrid.appendChild(card);
+    });
+    
+    otherSection.appendChild(otherGrid);
+    
+    // 將兩個區域添加到容器中
+    rankingContainer.appendChild(topThreeSection);
+    rankingContainer.appendChild(otherSection);
 }
 
 // 計算Holland代碼分數
@@ -299,4 +348,5 @@ function restart() {
 window.addEventListener('load', () => {
     updateSelectionUI();
     loadCareersData();
-});
+});otherTitle);
+    otherSection.appendChild(
