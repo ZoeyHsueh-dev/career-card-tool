@@ -78,8 +78,8 @@ function createCardElement(career) {
     card.dataset.id = career.id;
     card.innerHTML = `
         <div class="card-title">${career.name}</div>
-        <div class="card-code">${career.code}</div>
         <div class="card-description">${career.description}</div>
+        <div class="card-code">${career.code}</div>
     `;
     
     card.addEventListener('click', () => toggleCard(career.id));
@@ -219,12 +219,10 @@ function displayCareerRanking() {
         const item = document.createElement('div');
         item.className = 'career-item';
         item.innerHTML = `
-            <div style="display: flex; align-items: center; gap: 15px;">
-                <div class="career-rank">${career.rank}</div>
-                <div>
-                    <div style="font-weight: bold;">${career.name}</div>
-                    <div style="color: #666; font-size: 0.9rem;">${career.code}</div>
-                </div>
+            <div class="career-rank">${career.rank}</div>
+            <div class="career-info">
+                <div class="career-name">${career.name}</div>
+                <div class="career-code">${career.code}</div>
             </div>
         `;
         rankingList.appendChild(item);
