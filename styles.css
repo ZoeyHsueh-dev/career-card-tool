@@ -337,10 +337,11 @@ body {
 
 .timeline-container {
     position: relative;
-    padding: 20px 0;
+    padding: 40px 0;
+    overflow-x: auto;
 }
 
-/* 時間軸主線 */
+/* 時間軸主線 - 桌機版橫向 */
 .timeline-line {
     position: absolute;
     top: 50%;
@@ -350,26 +351,28 @@ body {
     background: linear-gradient(90deg, #947fb3, #f2c873, #947fb3);
     border-radius: 2px;
     z-index: 1;
+    transform: translateY(-50%);
 }
 
-/* 時間軸節點容器 */
+/* 時間軸節點容器 - 桌機版橫向 */
 .timeline-nodes {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
     z-index: 2;
     padding: 0 5%;
+    min-height: 200px;
 }
 
-/* 時間軸節點 */
+/* 時間軸節點 - 桌機版 */
 .timeline-node {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     flex: 1;
-    max-width: 100px;
+    max-width: 110px;
 }
 
 /* 排名圓圈 */
@@ -425,10 +428,11 @@ body {
     border: 2px solid #f0f0f0;
     transition: all 0.3s ease;
     text-align: center;
-    min-height: 80px;
+    min-height: 90px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
 }
 
 .career-info:hover {
@@ -461,7 +465,7 @@ body {
     background: linear-gradient(135deg, #fff, #fffbf0);
 }
 
-/* 連接線 */
+/* 連接線 - 桌機版 */
 .connection-line {
     position: absolute;
     top: 20px;
@@ -698,48 +702,53 @@ body {
         font-size: 1.2rem;
     }
 
-    /* 手機版時間軸調整 */
+    /* 手機版時間軸 - 改為垂直排列 */
     .timeline-container {
-        transform: rotate(90deg);
-        transform-origin: center;
-        height: 800px;
-        width: 100%;
-        margin: 350px 0;
-    }
-    
-    .timeline-nodes {
-        height: 100%;
-        flex-direction: column;
-        padding: 5% 0;
+        padding: 20px 0;
+        height: auto;
+        overflow-x: visible;
     }
     
     .timeline-line {
-        top: 5%;
-        bottom: 5%;
-        left: 50%;
+        top: 0;
+        bottom: 0;
+        left: 50px;
         right: auto;
         width: 4px;
         height: auto;
-        transform: translateX(-50%);
+        transform: none;
+        background: linear-gradient(180deg, #947fb3, #f2c873, #947fb3);
+    }
+    
+    .timeline-nodes {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        min-height: auto;
+        gap: 30px;
     }
     
     .timeline-node {
+        flex-direction: row;
+        align-items: center;
         max-width: none;
         width: 100%;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
         gap: 20px;
     }
     
+    .rank-circle {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+    
     .career-info {
-        transform: rotate(-90deg);
-        min-width: 120px;
+        flex-grow: 1;
+        margin-left: 10px;
     }
     
     .connection-line {
         top: 50%;
-        left: -20px;
+        left: 30px;
         transform: translateY(-50%);
         width: 15px;
         height: 2px;
