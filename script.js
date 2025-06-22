@@ -139,7 +139,7 @@ function goToRanking() {
         li.className = 'sortable-item';
         li.draggable = true;
         li.dataset.id = career.id;
-        li.innerHTML = `<div class="sortable-item-content">${career.name} (${career.code})</div>`;
+        li.innerHTML = `${career.name} (${career.code})`;
         sortableList.appendChild(li);
     });
     
@@ -210,70 +210,25 @@ function showResults() {
     calculateHollandScores();
 }
 
-// 顯示職業排名（時間軸式）
+// 顯示職業排名
 function displayCareerRanking() {
     const rankingList = document.getElementById('careerRankingList');
     rankingList.innerHTML = '';
     
-    // 創建時間軸區域
-    const timelineSection = document.createElement('div');
-    timelineSection.className = 'timeline-section';
-    
-    timelineSection.innerHTML = `
-        <div class="timeline-title">
-            🎯 <span>職業喜好時間軸</span> <span class="sparkle">✨</span>
-        </div>
+    rankedCareers.forEach(career => {
+        const item = document.createElement('div');
+        item.className = 'career-card';
         
-        <div class="mobile-note">
-            💡 手機版以垂直時間軸呈現，請向下滑動查看完整排序
-        </div>
+        // 根據排名設定顏色
+        const colorClass = career.rank <= 3 ? 'top-rank' : 'normal-rank';
         
-        <div class="timeline-container">
-            <!-- 時間軸主線 -->
-            <div class="timeline-line"></div>
-            
-            <!-- 時間軸節點 -->
-            <div class="timeline-nodes">
-    `;
-    
-    // 生成時間軸節點
-    rankedCareers.forEach((career, index) => {
-        let circleClass = '';
-        if (career.rank === 1) circleClass = 'first';
-        else if (career.rank === 2) circleClass = 'second';
-        else if (career.rank === 3) circleClass = 'third';
-        
-        const cardClass = career.rank <= 3 ? 'top-three' : '';
-        
-        timelineSection.innerHTML += `
-            <div class="timeline-node">
-                <div class="connection-line"></div>
-                <div class="rank-circle ${circleClass}">${career.rank}</div>
-                <div class="career-info ${cardClass}">
-                    <div class="career-name">${career.name}</div>
-                    <div class="career-code">${career.code}</div>
-                </div>
-            </div>
+        item.innerHTML = `
+            <div class="career-card-number ${colorClass}">${career.rank}</div>
+            <div class="career-card-title">${career.name}</div>
+            <div class="career-card-code">${career.code}</div>
         `;
+        rankingList.appendChild(item);
     });
-    
-    timelineSection.innerHTML += `
-            </div>
-        </div>
-        
-        <div class="progress-indicator">
-            <div>職業喜好程度</div>
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
-            </div>
-            <div style="display: flex; justify-content: space-between; margin-top: 5px;">
-                <span>最喜歡</span>
-                <span>最不喜歡</span>
-            </div>
-        </div>
-    `;
-    
-    rankingList.appendChild(timelineSection);
 }
 
 // 計算Holland代碼分數
