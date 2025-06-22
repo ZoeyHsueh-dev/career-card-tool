@@ -237,68 +237,49 @@ body {
     padding: 30px;
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    max-width: 600px;
-    margin: 0 auto;
 }
 
 .ranking-screen h2 {
     color: #947fb3;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     text-align: center;
-    font-size: 1.8rem;
 }
 
 .sortable-list {
     list-style: none;
     margin: 20px 0;
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 12px;
-    width: 100%;
 }
 
 .sortable-item {
     background: #f8f9fa;
-    padding: 18px 20px;
-    border-radius: 12px;
+    padding: 15px 20px;
+    border-radius: 10px;
     cursor: move;
-    border-left: 5px solid #947fb3;
+    border-left: 4px solid #947fb3;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 15px;
-    width: 100%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     position: relative;
-    min-height: 60px;
 }
 
 .sortable-item::before {
     content: "⋮⋮";
     color: #ccc;
     font-weight: bold;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1;
-    flex-shrink: 0;
-}
-
-.sortable-item-content {
-    flex-grow: 1;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #333;
 }
 
 .sortable-item:hover {
     background: #e9ecef;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    transform: translateX(5px);
 }
 
 .sortable-item.dragging {
-    opacity: 0.6;
-    transform: rotate(2deg);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    opacity: 0.5;
 }
 
 .result-screen {
@@ -318,197 +299,78 @@ body {
     margin-bottom: 40px;
 }
 
-/* 時間軸樣式 */
-.timeline-section {
-    margin-bottom: 50px;
+.career-ranking h3 {
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #947fb3;
+    padding-bottom: 10px;
 }
 
-.timeline-title {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
+/* 職業排名卡片樣式 */
+.career-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
     margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
 }
 
-.timeline-container {
-    position: relative;
-    padding: 40px 0;
-    overflow-x: auto;
-}
-
-/* 時間軸主線 - 桌機版橫向 */
-.timeline-line {
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    right: 5%;
-    height: 4px;
-    background: linear-gradient(90deg, #947fb3, #f2c873, #947fb3);
-    border-radius: 2px;
-    z-index: 1;
-    transform: translateY(-50%);
-}
-
-/* 時間軸節點容器 - 桌機版橫向 */
-.timeline-nodes {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    position: relative;
-    z-index: 2;
-    padding: 0 5%;
-    min-height: 200px;
-}
-
-/* 時間軸節點 - 桌機版 */
-.timeline-node {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    flex: 1;
-    max-width: 110px;
-}
-
-/* 排名圓圈 */
-.rank-circle {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: linear-gradient(45deg, #947fb3, #f2c873);
-    color: white;
-    font-weight: bold;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(148, 127, 179, 0.4);
-    margin-bottom: 15px;
-    position: relative;
-    z-index: 3;
-    border: 3px solid white;
-}
-
-/* 特殊樣式給前三名 */
-.rank-circle.first {
-    background: linear-gradient(45deg, #FFD700, #FFA500);
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
-    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5);
-}
-
-.rank-circle.second {
-    background: linear-gradient(45deg, #C0C0C0, #A8A8A8);
-    width: 45px;
-    height: 45px;
-    font-size: 1.2rem;
-    box-shadow: 0 5px 18px rgba(192, 192, 192, 0.5);
-}
-
-.rank-circle.third {
-    background: linear-gradient(45deg, #CD7F32, #B8860B);
-    width: 45px;
-    height: 45px;
-    font-size: 1.2rem;
-    box-shadow: 0 5px 18px rgba(205, 127, 50, 0.5);
-}
-
-/* 職業資訊卡片 */
-.career-info {
+.career-card {
     background: white;
-    border-radius: 12px;
-    padding: 15px 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border: 2px solid #f0f0f0;
-    transition: all 0.3s ease;
+    border-radius: 15px;
+    padding: 20px 15px;
     text-align: center;
-    min-height: 90px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid #e9ecef;
 }
 
-.career-info:hover {
-    transform: translateY(-5px);
+.career-card:hover {
+    transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    border-color: #947fb3;
 }
 
-.career-name {
+.career-card-number {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+}
+
+.career-card-number.top-rank {
+    background: linear-gradient(45deg, #f2c873, #f39c12);
+}
+
+.career-card-number.normal-rank {
+    background: linear-gradient(45deg, #947fb3, #8e7cc3);
+}
+
+.career-card-title {
+    font-size: 1rem;
     font-weight: bold;
     color: #333;
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    line-height: 1.2;
+    margin-bottom: 8px;
+    line-height: 1.3;
+    min-height: 2.6em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.career-code {
-    background: rgba(148, 127, 179, 0.15);
+.career-card-code {
+    background: rgba(148, 127, 179, 0.1);
     color: #947fb3;
-    padding: 3px 8px;
-    border-radius: 10px;
-    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
     font-weight: 600;
     display: inline-block;
-}
-
-/* 特殊樣式給前三名的卡片 */
-.career-info.top-three {
-    border-color: #FFD700;
-    background: linear-gradient(135deg, #fff, #fffbf0);
-}
-
-/* 連接線 - 桌機版 */
-.connection-line {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 15px;
-    background: #947fb3;
-    z-index: 2;
-}
-
-/* 進度指示器 */
-.progress-indicator {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.progress-bar {
-    background: #f0f0f0;
-    height: 8px;
-    border-radius: 4px;
-    margin: 10px auto;
-    max-width: 400px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    background: linear-gradient(90deg, #947fb3, #f2c873);
-    height: 100%;
-    width: 100%;
-    border-radius: 4px;
-    animation: progressFill 3s ease-in-out;
-}
-
-@keyframes progressFill {
-    0% { width: 0%; }
-    100% { width: 100%; }
-}
-
-.mobile-note {
-    display: none;
 }
 
 .holland-analysis {
@@ -561,39 +423,47 @@ body {
     display: none;
 }
 
-/* 響應式設計 */
-@media (max-width: 1024px) {
-    .timeline-nodes {
-        padding: 0 2%;
-    }
-    
-    .timeline-line {
-        left: 2%;
-        right: 2%;
-    }
-    
-    .career-name {
-        font-size: 0.8rem;
-    }
-    
-    .rank-circle {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    
-    .rank-circle.first {
-        width: 42px;
-        height: 42px;
-    }
-    
-    .rank-circle.second,
-    .rank-circle.third {
-        width: 38px;
-        height: 38px;
+/* 響應式設計 - 職業卡片 */
+@media (max-width: 1200px) {
+    .career-cards-grid {
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
+@media (max-width: 900px) {
+    .career-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .career-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .career-card {
+        padding: 15px 10px;
+    }
+    
+    .career-card-title {
+        font-size: 0.9rem;
+    }
+    
+    .career-card-number {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .career-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 響應式設計 */
 @media (max-width: 768px) {
     .container {
         padding: 10px;
@@ -639,36 +509,11 @@ body {
     }
     
     .sortable-item {
-        padding: 15px 18px;
-        min-height: 55px;
-    }
-    
-    .sortable-item-content {
-        font-size: 1rem;
-    }
-    
-    .ranking-screen {
-        padding: 25px 20px;
-        margin: 0 10px;
-    }
-    
-    .ranking-screen h2 {
-        font-size: 1.6rem;
-    }
-
-    .mobile-note {
-        display: block;
-        text-align: center;
-        color: #666;
-        font-size: 0.9rem;
-        margin-bottom: 20px;
-        padding: 10px;
-        background: rgba(148, 127, 179, 0.1);
-        border-radius: 8px;
+        padding: 12px 15px;
     }
 }
 
-/* 只有在真正的小螢幕手機時才使用垂直時間軸 */
+/* 小螢幕時的額外調整 */
 @media (max-width: 480px) {
     #selectionScreen .selection-info {
         top: 5px;
@@ -692,65 +537,5 @@ body {
     
     .cards-grid {
         grid-template-columns: 1fr;
-    }
-
-    .result-screen h2 {
-        font-size: 1.8rem;
-    }
-
-    .timeline-title {
-        font-size: 1.2rem;
-    }
-
-    /* 手機版時間軸 - 改為垂直排列 */
-    .timeline-container {
-        padding: 20px 0;
-        height: auto;
-        overflow-x: visible;
-    }
-    
-    .timeline-line {
-        top: 0;
-        bottom: 0;
-        left: 50px;
-        right: auto;
-        width: 4px;
-        height: auto;
-        transform: none;
-        background: linear-gradient(180deg, #947fb3, #f2c873, #947fb3);
-    }
-    
-    .timeline-nodes {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0;
-        min-height: auto;
-        gap: 30px;
-    }
-    
-    .timeline-node {
-        flex-direction: row;
-        align-items: center;
-        max-width: none;
-        width: 100%;
-        gap: 20px;
-    }
-    
-    .rank-circle {
-        margin-bottom: 0;
-        flex-shrink: 0;
-    }
-    
-    .career-info {
-        flex-grow: 1;
-        margin-left: 10px;
-    }
-    
-    .connection-line {
-        top: 50%;
-        left: 30px;
-        transform: translateY(-50%);
-        width: 15px;
-        height: 2px;
     }
 }
