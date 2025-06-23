@@ -40,17 +40,18 @@
 
         <!-- 排序畫面 -->
         <div id="rankingScreen" class="ranking-screen hidden">
-            <h2>請拖拽排序您選擇的職業（從最喜歡到最不喜歡）</h2>
+            <h2>請拖曳排序您的前10名喜愛職業的優先順序，最上方為第1名</h2>
             <ul id="sortableList" class="sortable-list"></ul>
-            <button class="btn-primary" onclick="confirmRanking()">排序已確認</button>
+            <div class="ranking-button-container">
+                <button class="btn-primary" onclick="confirmRanking()">排序已確認</button>
+            </div>
         </div>
 
         <!-- 結果畫面 -->
         <div id="resultScreen" class="result-screen hidden">
-            <h2>您的職涯分析結果</h2>
+            <h2>您的職業偏好排序</h2>
             
             <div class="career-ranking">
-                <h3>您的職業偏好排序</h3>
                 <div id="careerRankingList" class="career-cards-grid"></div>
             </div>
 
