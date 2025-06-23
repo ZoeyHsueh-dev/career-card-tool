@@ -257,12 +257,12 @@ function displayHollandScores(scores) {
     hollandContainer.innerHTML = '';
     
     const hollandTypes = {
-        R: '實用型',
-        I: '研究型', 
-        A: '藝術型',
-        S: '社會型',
-        E: '企業型',
-        C: '事務型'
+        R: '實踐者',
+        I: '思考者', 
+        A: '創造者',
+        S: '助人者',
+        E: '影響者',
+        C: '組織者'
     };
     
     // 按照RIASEC順序顯示
