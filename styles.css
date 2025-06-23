@@ -45,7 +45,7 @@ body {
 
 .start-screen h2 {
     color: #667eea;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-size: 2rem;
 }
 
@@ -54,6 +54,54 @@ body {
     margin-bottom: 30px;
     font-size: 1.1rem;
     line-height: 1.6;
+}
+
+.tool-description {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    border-left: 4px solid #667eea;
+    text-align: left;
+}
+
+.tool-description h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.tool-description p {
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.disclaimer {
+    background: #e8f4f8;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #b3e0f2;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.disclaimer h4 {
+    color: #2c5aa0;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.disclaimer p {
+    color: #466b8a;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.disclaimer p:last-child {
+    margin-bottom: 0;
 }
 
 .btn-primary {
@@ -516,6 +564,27 @@ body {
     .sortable-item {
         padding: 12px 15px;
     }
+    
+    .tool-description, .disclaimer {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .tool-description h3 {
+        font-size: 1.2rem;
+    }
+    
+    .tool-description p {
+        font-size: 1rem;
+    }
+    
+    .disclaimer h4 {
+        font-size: 1rem;
+    }
+    
+    .disclaimer p {
+        font-size: 0.9rem;
+    }
 }
 
 /* 小螢幕時的額外調整 */
@@ -542,5 +611,28 @@ body {
     
     .cards-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .tool-description, .disclaimer {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .tool-description h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .tool-description p {
+        font-size: 0.95rem;
+    }
+    
+    .disclaimer h4 {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+    
+    .disclaimer p {
+        font-size: 0.85rem;
     }
 }
