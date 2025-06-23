@@ -237,12 +237,13 @@ function calculateHollandScores() {
     
     rankedCareers.forEach(career => {
         const code = career.code.toUpperCase();
-        const baseScore = rankedCareers.length - career.rank + 1; // 排名越前面分數越高
         
+        // 根據代碼中字母的位置給分：第1個字母3分，第2個字母2分，第3個字母1分
         for (let i = 0; i < code.length; i++) {
             const letter = code[i];
             if (hollandScores.hasOwnProperty(letter)) {
-                hollandScores[letter] += baseScore - i; // 第一個字母分數最高
+                const score = 3 - i; // 第1個字母3分，第2個字母2分，第3個字母1分
+                hollandScores[letter] += score;
             }
         }
     });
